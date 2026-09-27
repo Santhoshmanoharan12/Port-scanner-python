@@ -1,29 +1,36 @@
-Net Scanner - Python TCP Network Scanner
+# 🔍 Net Scanner - Python TCP Network Scanner
 
-A simple TCP network port scanner built with Python that checks whether TCP ports are open, closed, or timed out on an authorized target and saves the scan results in JSON and CSV formats.
+A simple **TCP network port scanner built with Python** that checks whether TCP ports are **open, closed, or timed out** on an authorized target and saves the scan results in **JSON and CSV** formats.
 
-This project is designed as a beginner-friendly cybersecurity project to understand how TCP connections, sockets, ports, exception handling, and network scanning work.
+This project is designed as a beginner-friendly cybersecurity project to understand how **TCP connections, sockets, ports, exception handling, and network scanning** work.
 
-📌 Features
-TCP port scanning using Python
-IPv4 socket communication
-Configurable port range
-Connection timeout handling
-Detects:
-OPEN
-CLOSED
-TIMEOUT
-ERROR
-Common port/service identification
-JSON report generation
-CSV report generation
-Simple and modular project structure
-Uses Python standard library
+---
 
-💻 How It Works
+## 📌 Features
+
+* TCP port scanning using Python
+* IPv4 socket communication
+* Configurable port range
+* Connection timeout handling
+* Detects:
+
+  * `OPEN`
+  * `CLOSED`
+  * `TIMEOUT`
+  * `ERROR`
+* Common port/service identification
+* JSON report generation
+* CSV report generation
+* Simple and modular project structure
+* Uses Python standard library
+
+---
+
+## 💻 How It Works
 
 The scanner attempts to establish a TCP connection with a target IP address and port.
 
+```text
 Target IP + Port
        │
        ▼
@@ -37,95 +44,118 @@ Attempt TCP Connection
        │
    ┌───┴──────────────┐
    ▼                  ▼
-Connection        Connection
-Successful        Failed
+Success             Failure
    │                  │
-   ▼             ┌────┴──────────┐
- OPEN            ▼               ▼
-             REFUSED          TIMEOUT
+   ▼             ┌────┴─────────┐
+ OPEN            ▼              ▼
+             REFUSED         TIMEOUT
                 │               │
                 ▼               ▼
-              CLOSED        TIMEOUT
-Example
+              CLOSED         TIMEOUT
+```
+
+### Example
+
+```text
 Target: 127.0.0.1
 
 Port 22   → CLOSED
 Port 80   → OPEN
 Port 443  → OPEN
 Port 3306 → CLOSED
+```
 
-A timeout does not necessarily mean that a port is closed. It may indicate filtering, firewall behavior, network problems, or an unreachable target.
+> **Note:** A timeout does not necessarily mean that a port is closed. It may indicate filtering, firewall behavior, network problems, or an unreachable target.
 
-🛠️ Technologies Used
-Technology	Purpose
-Python 3	Main programming language
-socket	TCP network communication
-json	JSON report generation
-csv	CSV report generation
-datetime	Scan timestamp
-Git	Version control
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose                   |
+| ---------- | ------------------------- |
+| Python 3   | Main programming language |
+| `socket`   | TCP network communication |
+| `json`     | JSON report generation    |
+| `csv`      | CSV report generation     |
+| `datetime` | Scan timestamp            |
+| Git        | Version control           |
 
 No external Python packages are required for the basic version.
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+
+```text
 Net Scanner/
 │
 ├── __pycache__/
-│
 ├── .gitignore
 ├── Readme.MD
-│
 ├── scanner.py
 ├── services.py
 ├── reporter.py
-│
 ├── scan_report.json
 └── scan_report.csv
-scanner.py
+```
+
+### `scanner.py`
 
 Contains the main TCP scanning logic.
 
-Responsibilities:
+**Responsibilities:**
 
-Create TCP sockets
-Set connection timeout
-Connect to the target
-Check individual ports
-Identify connection results
-Return scan results
-services.py
+* Create TCP sockets
+* Set connection timeout
+* Connect to the target
+* Check individual ports
+* Identify connection results
+* Return scan results
+
+---
+
+### `services.py`
 
 Contains information about common network ports and their expected services.
 
 Example:
 
-21    → FTP
-22    → SSH
-25    → SMTP
-53    → DNS
-80    → HTTP
-443   → HTTPS
-3306  → MySQL
+| Port | Common Service |
+| ---: | -------------- |
+|   21 | FTP            |
+|   22 | SSH            |
+|   25 | SMTP           |
+|   53 | DNS            |
+|   80 | HTTP           |
+|  443 | HTTPS          |
+| 3306 | MySQL          |
 
-The service name is based on the commonly associated port. A port number alone does not prove which software is actually running.
+> The service name is based on the commonly associated port. A port number alone does **not** prove which software is actually running.
 
-reporter.py
+---
+
+### `reporter.py`
 
 Handles the storage of scan results.
 
 It generates:
 
+```text
 scan_report.json
 scan_report.csv
+```
 
-This separates scanning from report generation, making the project easier to maintain.
+This separates **scanning** from **report generation**, making the project easier to maintain.
 
-scan_report.json
+---
+
+### `scan_report.json`
 
 Stores scan results in structured JSON format.
 
 Example:
 
+```json
 [
     {
         "target": "127.0.0.1",
@@ -140,76 +170,126 @@ Example:
         "service": "SSH"
     }
 ]
-scan_report.csv
+```
+
+---
+
+### `scan_report.csv`
 
 Stores the same information in a spreadsheet-friendly format.
 
 Example:
 
+```csv
 target,port,protocol,status,service
 127.0.0.1,80,TCP,OPEN,HTTP
 127.0.0.1,22,TCP,CLOSED,SSH
-🚀 Getting Started
-1. Clone the repository
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
 git clone <your-repository-url>
-2. Open the project
-cd Net Scanner
-3. Run the scanner
+```
+
+### 2. Open the Project
+
+```bash
+cd Net-Scanner
+```
+
+### 3. Run the Scanner
+
+```bash
 python scanner.py
+```
 
-Depending on your implementation, configure the target and port range inside scanner.py before running.
+Configure the target and port range inside `scanner.py` according to your implementation.
 
-🧪 Safe Testing
+---
 
-For learning and development, use a system that you own or have explicit permission to test.
+## 🧪 Safe Testing
 
-Local computer
+For learning and development, use a system that you **own or have explicit permission to test**.
+
+### Local Computer
+
+```text
 127.0.0.1
+```
 
-This is the loopback address of your own computer.
+`127.0.0.1` is the loopback address of your own computer.
 
-You can also use a deliberately configured cybersecurity lab such as a local virtual machine.
+You can also use a deliberately configured cybersecurity lab or virtual machine.
 
-Example
+### Example
+
+```text
 Target:
 127.0.0.1
 
-Port range:
-Example Port Range = 1 - 1024
+Port Range:
+1 - 1024
+```
 
-Do not scan websites, servers, or networks belonging to other people or organizations without explicit authorization.
+> ⚠️ Do not scan websites, servers, or networks belonging to other people or organizations without explicit authorization.
 
-📊 Scan Result States
-Status	Meaning
-OPEN	TCP connection was successfully established
-CLOSED	Target responded that the connection was refused
-TIMEOUT	No response was received within the configured timeout
-ERROR	An unexpected socket/network error occurred
-🔬 Core TCP Concept
+---
+
+## 📊 Scan Result States
+
+| Status    | Meaning                                                |
+| --------- | ------------------------------------------------------ |
+| `OPEN`    | TCP connection was successfully established            |
+| `CLOSED`  | Target responded that the connection was refused       |
+| `TIMEOUT` | No response was received within the configured timeout |
+| `ERROR`   | An unexpected socket/network error occurred            |
+
+---
+
+## 🔬 Core TCP Concept
 
 The scanner uses:
 
+```python
 socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-AF_INET
+```
 
-Specifies IPv4.
+### `AF_INET`
 
+Specifies **IPv4**.
+
+```text
 AF_INET → IPv4
-SOCK_STREAM
+```
 
-Specifies a stream socket, normally used for TCP.
+### `SOCK_STREAM`
 
+Specifies a stream socket, normally used for **TCP**.
+
+```text
 SOCK_STREAM → TCP
+```
 
 Therefore:
 
+```python
 socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+```
 
 means:
 
-Create an IPv4 TCP socket.
+> Create an IPv4 TCP socket.
 
-🔄 Scanner Workflow
+---
+
+## 🔄 Scanner Workflow
+
+```text
 Start
   │
   ▼
@@ -246,7 +326,7 @@ Success         Failure
               Save Result
                    │
                    ▼
-             Next Port
+               Next Port
                    │
                    ▼
              Scan Complete
@@ -254,69 +334,88 @@ Success         Failure
           ┌────────┴────────┐
           ▼                 ▼
       JSON Report       CSV Report
-🎯 Learning Objectives
+```
+
+---
+
+## 🎯 Learning Objectives
 
 This project helps understand the fundamentals of:
 
-Computer networks
-TCP/IP
-IPv4
-TCP connections
-Network ports
-Python sockets
-Exception handling
-Timeouts
-Loops
-Functions
-File handling
-JSON
-CSV
-Basic cybersecurity concepts
-Modular Python programming
+* Computer networks
+* TCP/IP
+* IPv4
+* TCP connections
+* Network ports
+* Python sockets
+* Exception handling
+* Timeouts
+* Loops
+* Functions
+* File handling
+* JSON
+* CSV
+* Basic cybersecurity
+* Modular Python programming
 
-🧩 Development Approach
+---
+
+## 🧩 Development Approach
 
 The project is being developed incrementally:
 
 1. Create TCP socket
-       ↓
+          ↓
 2. Scan one port
-       ↓
+          ↓
 3. Handle OPEN/CLOSED/TIMEOUT
-       ↓
+          ↓
 4. Scan a port range
-       ↓
+          ↓
 5. Store results
-       ↓
+          ↓
 6. Identify common services
-       ↓
+          ↓
 7. Generate JSON report
-       ↓
+          ↓
 8. Generate CSV report
-       ↓
+          ↓
 9. Improve CLI
-       ↓
+          ↓
 10. Add concurrent scanning
-🔮 Future Improvements
+
+## 🔮 Future Improvements
 
 Possible future versions may include:
 
 Multi-threaded TCP scanning
-Command-line arguments
-Custom timeout configuration
-IPv6 support
-Better error classification
-Scan statistics
-Service detection
-Logging
-Multiple output formats
-Input validation
-Unit tests
-Configuration files
-Progress indicators
-Local cybersecurity lab integration
 
-⚠️ Legal & Ethical Use
+Command-line arguments
+
+Custom timeout configuration
+
+IPv6 support
+
+Better error classification
+
+Scan statistics
+
+Service detection
+
+Logging
+
+Multiple output formats
+
+Input validation
+
+Unit tests
+
+Configuration files
+
+Progress indicators
+
+Local cybersecurity lab integration
+## ⚠️ Legal & Ethical Use
 
 This project is intended for educational and authorized security testing.
 
@@ -332,7 +431,7 @@ Unauthorized port scanning may violate organizational policies, terms of service
 
 The author is not responsible for misuse of this tool.
 
-👨‍💻 Project Goal
+## 👨‍💻 Project Goal
 
 The goal of this project is not just to create a port scanner, but to understand what happens underneath a network connection:
 
@@ -348,4 +447,26 @@ Network Interface
   ↓
 Target
 
-By building the scanner from the ground up, the project demonstrates practical understanding of network programming and cybersecurity fundamentals.
+By building the scanner from the ground up, this project demonstrates practical understanding of network programming and cybersecurity fundamentals.
+
+## 📚 What I Learned
+
+Through this project, I learned how to:
+
+Create TCP sockets using Python
+Work with IPv4 addresses
+Connect to TCP ports
+Handle connection timeouts
+Handle connection-refused errors
+Scan multiple ports
+Organize Python code into modules
+Store structured data in JSON
+Export scan results to CSV
+Understand basic network-service relationships
+Build a small cybersecurity tool from scratch
+
+## ⭐ Project Status
+
+Current Status: 🚧 In Development
+
+The basic TCP scanning and report-generation functionality is being developed incrementally.
