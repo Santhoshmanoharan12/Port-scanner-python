@@ -364,6 +364,7 @@ This project helps understand the fundamentals of:
 
 The project is being developed incrementally:
 
+```text
 1. Create TCP socket
           ↓
 2. Scan one port
@@ -383,6 +384,7 @@ The project is being developed incrementally:
 9. Improve CLI
           ↓
 10. Add concurrent scanning
+```
 
 ## 🔮 Future Improvements
 
