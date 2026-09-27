@@ -1,0 +1,57 @@
+host,port,status,service
+www.paypal.com,30,Timeout,Unknown Service
+www.paypal.com,31,Timeout,Unknown Service
+www.paypal.com,32,Timeout,Unknown Service
+www.paypal.com,33,Timeout,Unknown Service
+www.paypal.com,34,Timeout,Unknown Service
+www.paypal.com,35,Timeout,Unknown Service
+www.paypal.com,36,Timeout,Unknown Service
+www.paypal.com,37,Timeout,Unknown Service
+www.paypal.com,38,Timeout,Unknown Service
+www.paypal.com,39,Timeout,Unknown Service
+www.paypal.com,40,Timeout,Unknown Service
+www.paypal.com,41,Timeout,Unknown Service
+www.paypal.com,42,Timeout,Unknown Service
+www.paypal.com,43,Timeout,Unknown Service
+www.paypal.com,44,Timeout,Unknown Service
+www.paypal.com,45,Timeout,Unknown Service
+www.paypal.com,46,Timeout,Unknown Service
+www.paypal.com,47,Timeout,Unknown Service
+www.paypal.com,48,Timeout,Unknown Service
+www.paypal.com,49,Timeout,Unknown Service
+www.paypal.com,50,Timeout,Unknown Service
+www.paypal.com,51,Timeout,Unknown Service
+www.paypal.com,52,Timeout,Unknown Service
+www.paypal.com,53,Timeout,DNS
+www.paypal.com,54,Timeout,Unknown Service
+www.paypal.com,55,Timeout,Unknown Service
+www.paypal.com,56,Timeout,Unknown Service
+www.paypal.com,57,Timeout,Unknown Service
+www.paypal.com,58,Timeout,Unknown Service
+www.paypal.com,59,Timeout,Unknown Service
+www.paypal.com,60,Timeout,Unknown Service
+www.paypal.com,61,Timeout,Unknown Service
+www.paypal.com,62,Timeout,Unknown Service
+www.paypal.com,63,Timeout,Unknown Service
+www.paypal.com,64,Timeout,Unknown Service
+www.paypal.com,65,Timeout,Unknown Service
+www.paypal.com,66,Timeout,Unknown Service
+www.paypal.com,67,Timeout,DHCP-Server
+www.paypal.com,68,Timeout,DHCP-Client
+www.paypal.com,69,Timeout,TFTP
+www.paypal.com,70,Timeout,Unknown Service
+www.paypal.com,71,Timeout,Unknown Service
+www.paypal.com,72,Timeout,Unknown Service
+www.paypal.com,73,Timeout,Unknown Service
+www.paypal.com,74,Timeout,Unknown Service
+www.paypal.com,75,Timeout,Unknown Service
+www.paypal.com,76,Timeout,Unknown Service
+www.paypal.com,77,Timeout,Unknown Service
+www.paypal.com,78,Timeout,Unknown Service
+www.paypal.com,79,Timeout,Unknown Service
+www.paypal.com,80,Open,HTTP
+www.paypal.com,81,Timeout,Unknown Service
+www.paypal.com,82,Timeout,Unknown Service
+www.paypal.com,83,Timeout,Unknown Service
+www.paypal.com,84,Timeout,Unknown Service
+www.paypal.com,85,Timeout,Unknown Service
